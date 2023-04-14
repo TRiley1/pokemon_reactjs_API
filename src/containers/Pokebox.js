@@ -13,12 +13,13 @@ const Pokebox = () => {
 
     
     async function fetchGen1Pokemon() {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=250=0');
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151=0');
         const data = await response.json();
         const speciesArray = data['results'];
 
         const promises = speciesArray.map(pokemon => {
-            return fetch(pokemon.url).then(res => res.json());
+            return fetch(pokemon.url)
+            .then(res => res.json());
         });
 
         const pokemonData = await Promise.all(promises);
