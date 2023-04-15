@@ -1,19 +1,29 @@
 import Pokelist from "../components/Pokelist";
+import SelectPoke from "../components/SelectPoke";
 import React, { useState, useEffect } from 'react';
 
 
-const Pokebox = () => {
+const Pokebox = ({generations}) => {
 
     const [pokemons, setPokemons] = useState([])
+    const [shiny, setShiny] = useState(false)
+
+    const handleClick = function(){
+        setShiny(!shiny)
+    }
 
 
     useEffect(() => {
-        fetchGen1Pokemon();
+        fetchGen1Pokemon(generations[0].url);
       }, []);
 
+      if (pokemons == null || pokemons.length === 0) {
+        return <p>Loading...</p>;
+      }
+
     
-    async function fetchGen1Pokemon() {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151=0');
+    async function fetchGen1Pokemon(url) {
+        const response = await fetch(url);
         const data = await response.json();
         const speciesArray = data['results'];
 
@@ -28,15 +38,6 @@ const Pokebox = () => {
     }
 
 
-
-console.log(pokemons);
-
-
-    // useEffect(() => {
-    //     fetchGen1Pokemon()
-    // },[])
-
-    
 
     //  const fetchGen1Pokemon = function(){
     //     fetch('https://pokeapi.co/api/v2/pokemon?limit=15=0')
@@ -53,26 +54,13 @@ console.log(pokemons);
     //     setPokemons(pokemonData)
     //     }) 
     // }
-
     
-    
-
-    // pokemonData.forEach((pokemon)=>{
-    //     fetch(pokemon.url)
-    //     .then(res => res.json())
-    //     .then(data => pokemonJson.push({pokemon.name, data}))
-    // })
-
-    
-
-
-
-
-
     return ( 
         <>
             <h2>Pokebox</h2>
-            <Pokelist pokemons = {pokemons}></Pokelist>
+            <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon}></SelectPoke>
+            <Pokelist pokemons = {pokemons} shiny = {shiny} handleClick = {handleClick}></Pokelist>
+            
         </>
      );
 }
