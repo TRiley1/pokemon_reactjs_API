@@ -1,8 +1,8 @@
 
 const SelectPoke = ({generations, fetchGen1Pokemon}) => {
 
-    const selectOptions = generations.map(generation => {
-        return <option value = {generation.url}> {generation.name}</option>
+    const selectOptions = generations.map((generation, index) => {
+        return <option value = {generation.url} key = {index}> {generation.name} </option>
     })
 
     const handleChange = function(event){

@@ -1,3 +1,4 @@
+import '../App.css'
 import Pokemon from "./Pokemon";
 
 const Pokelist = ({pokemons}) => {
@@ -13,8 +14,10 @@ const Pokelist = ({pokemons}) => {
 
     return ( 
         <>
-            <h3>Pokelist</h3>
-            {pokemonNodes}
+            
+            <div className = 'pokemon_grid'>
+                {pokemonNodes}
+            </div>
         </>
      );
 }
