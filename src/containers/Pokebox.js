@@ -6,11 +6,7 @@ import React, { useState, useEffect } from 'react';
 const Pokebox = ({generations}) => {
 
     const [pokemons, setPokemons] = useState([])
-    const [shiny, setShiny] = useState(false)
-
-    const handleClick = function(){
-        setShiny(!shiny)
-    }
+    
 
 
     useEffect(() => {
@@ -59,7 +55,7 @@ const Pokebox = ({generations}) => {
         <>
             <h2>Pokebox</h2>
             <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon}></SelectPoke>
-            <Pokelist pokemons = {pokemons} shiny = {shiny} handleClick = {handleClick}></Pokelist>
+            <Pokelist pokemons = {pokemons}></Pokelist>
             
         </>
      );

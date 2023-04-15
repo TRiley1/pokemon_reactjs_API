@@ -1,10 +1,10 @@
 import Pokemon from "./Pokemon";
 
-const Pokelist = ({pokemons, shiny, handleClick}) => {
+const Pokelist = ({pokemons}) => {
 
 
     const pokemonNodes = pokemons.map((pokemon) => {
-         return (pokemon)? <Pokemon pokemon={pokemon} key = {pokemon.id} shiny = {shiny} handleClick = {handleClick}></Pokemon> : null
+         return (pokemon)? <Pokemon pokemon={pokemon} key = {pokemon.id}></Pokemon> : null
     })
 
 

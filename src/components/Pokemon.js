@@ -1,6 +1,13 @@
-const Pokemon = ({pokemon, shiny, handleClick}) => {
+import React, { useState } from 'react';
 
-    
+
+const Pokemon = ({pokemon}) => {
+
+    const [shiny, setShiny] = useState(false)
+
+    const handleClick = function(){
+        setShiny(!shiny)
+    }
 
 
 
