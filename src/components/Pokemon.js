@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css'
 
 
 const Pokemon = ({pokemon}) => {
@@ -14,8 +15,8 @@ const Pokemon = ({pokemon}) => {
     return ( 
     <>
         <h3>{pokemon.name}</h3>
-        <img src = {shiny? pokemon.sprites.front_shiny : pokemon.sprites.front_default } alt = {pokemon.name}/>
-        <button onClick = {handleClick}></button>
+        <img src = {shiny? pokemon.sprites.other['official-artwork'].front_shiny: pokemon.sprites.other['official-artwork'].front_default } alt = {pokemon.name}/>
+        <button onClick = {handleClick}>Toggle Shiny</button>
         
     </>
     );
