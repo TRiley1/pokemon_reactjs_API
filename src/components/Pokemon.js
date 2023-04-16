@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css'
-
+import { StyledTitle, StyledButton,StyledItem } from './StyledComponents';
 
 const Pokemon = ({pokemon}) => {
 
@@ -14,10 +13,11 @@ const Pokemon = ({pokemon}) => {
 
     return ( 
     <>
-        <h3>{pokemon.name}</h3>
-        <img src = {shiny? pokemon.sprites.other['official-artwork'].front_shiny: pokemon.sprites.other['official-artwork'].front_default } alt = {pokemon.name}/>
-        <button onClick = {handleClick}>Toggle Shiny</button>
-        
+        <StyledItem>
+            <StyledTitle>{pokemon.name}</StyledTitle>
+            <img src = {shiny? pokemon.sprites.other['official-artwork'].front_shiny: pokemon.sprites.other['official-artwork'].front_default } alt = {pokemon.name}/>
+            <StyledButton onClick = {handleClick}>Toggle Shiny</StyledButton> 
+        </StyledItem>
     </>
     );
 }

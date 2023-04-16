@@ -3,6 +3,7 @@ import SelectPoke from "../components/SelectPoke";
 import React, { useState, useEffect } from 'react';
 
 
+
 const Pokebox = ({generations}) => {
 
     const [pokemons, setPokemons] = useState([])

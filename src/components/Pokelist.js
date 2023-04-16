@@ -1,5 +1,6 @@
 import '../App.css'
 import Pokemon from "./Pokemon";
+import { StyledContainer, StyledItem } from './StyledComponents';
 
 const Pokelist = ({pokemons}) => {
 
@@ -15,9 +16,10 @@ const Pokelist = ({pokemons}) => {
     return ( 
         <>
             
-            <div className = 'pokemon_grid'>
+           <StyledContainer>
                 {pokemonNodes}
-            </div>
+           </StyledContainer>
+            
         </>
      );
 }
