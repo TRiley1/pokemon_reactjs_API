@@ -34,6 +34,7 @@ const StyledItem = styled.div`
   background-color: #eee;
   padding: 1rem;
   text-align: center;
+  border-radius: 50px
 `;
 
 const StyledImage = styled.img`

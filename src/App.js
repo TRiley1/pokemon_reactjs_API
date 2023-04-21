@@ -18,8 +18,6 @@ function App() {
 
 
   return (
-
-    
     <Pokebox generations = {generations}></Pokebox>
   );
 }

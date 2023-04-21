@@ -6,9 +6,9 @@ import React, { useState, useEffect } from 'react';
 
 const Pokebox = ({generations}) => {
 
-    const [pokemons, setPokemons] = useState([])
-    
-
+    const [pokemons, setPokemons] = useState([]);
+    const [search, setSearch] = useState('');
+   
 
     useEffect(() => {
         fetchGen1Pokemon(generations[0].url);
@@ -18,8 +18,9 @@ const Pokebox = ({generations}) => {
         return <p>Loading...</p>;
       }
 
+
     
-    async function fetchGen1Pokemon(url) {
+        async function fetchGen1Pokemon(url) {
         const response = await fetch(url);
         const data = await response.json();
         const speciesArray = data['results'];
@@ -32,30 +33,22 @@ const Pokebox = ({generations}) => {
         const pokemonData = await Promise.all(promises);
 
         setPokemons(pokemonData);
+        setSearch('')
+        
+    }
+
+   
+
+    const handleInput = (value) => {
+        return setSearch(value)
     }
 
 
-
-    //  const fetchGen1Pokemon = function(){
-    //     fetch('https://pokeapi.co/api/v2/pokemon?limit=15=0')
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         const speciesArray = data['results']
-    //         const pokemonData = []
-
-    //         speciesArray.forEach((pokemon) => {
-    //             fetch(pokemon.url)
-    //             .then(res => res.json())
-    //             .then(data => pokemonData.push(data))
-    //         })
-    //     setPokemons(pokemonData)
-    //     }) 
-    // }
     
     return ( 
         <>
             <h2>Pokebox</h2>
-            <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon}></SelectPoke>
+            <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon} handleInput = {handleInput}></SelectPoke>
             <Pokelist pokemons = {pokemons}></Pokelist>
             
         </>

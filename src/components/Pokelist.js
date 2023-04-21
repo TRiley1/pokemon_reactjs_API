@@ -10,16 +10,11 @@ const Pokelist = ({pokemons}) => {
     })
 
 
-
-    
-
     return ( 
         <>
-            
            <StyledContainer>
                 {pokemonNodes}
            </StyledContainer>
-            
         </>
      );
 }
