@@ -8,17 +8,30 @@ const Pokebox = ({generations}) => {
 
     const [pokemons, setPokemons] = useState([]);
     const [search, setSearch] = useState('');
+    const [filteredSearch, setFilterSearch] = useState('')
+
+    
    
 
     useEffect(() => {
         fetchGen1Pokemon(generations[0].url);
       }, []);
 
+    useEffect(() => {
+        const searchTerm = search.toLowerCase()
+
+        const searchFilter = pokemons.filter((pokemon) => {
+            return pokemon.name.toLowerCase().includes(searchTerm)
+        })
+
+        setFilterSearch(searchFilter)
+    }, [search])
+
       if (pokemons == null || pokemons.length === 0) {
         return <p>Loading...</p>;
       }
 
-
+        
     
         async function fetchGen1Pokemon(url) {
         const response = await fetch(url);
@@ -33,9 +46,10 @@ const Pokebox = ({generations}) => {
         const pokemonData = await Promise.all(promises);
 
         setPokemons(pokemonData);
+        setFilterSearch(pokemonData);
         setSearch('')
         
-    }
+        }
 
    
 
@@ -49,7 +63,7 @@ const Pokebox = ({generations}) => {
         <>
             <h2>Pokebox</h2>
             <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon} handleInput = {handleInput}></SelectPoke>
-            <Pokelist pokemons = {pokemons}></Pokelist>
+            <Pokelist pokemons = {filteredSearch}></Pokelist>
             
         </>
      );
