@@ -8,10 +8,8 @@ const Pokebox = ({generations}) => {
 
     const [pokemons, setPokemons] = useState([]);
     const [search, setSearch] = useState('');
-    const [filteredSearch, setFilterSearch] = useState('')
+    const [filteredSearch, setFilterSearch] = useState('');
 
-    
-   
 
     useEffect(() => {
         fetchGen1Pokemon(generations[0].url);
@@ -57,12 +55,31 @@ const Pokebox = ({generations}) => {
         return setSearch(value)
     }
 
+    async function fetchFirePokemon(url) {
+        const response = await fetch(url);
+        const data = await response.json();
+        const typeArray = data['pokemon'];
+
+        console.log(typeArray)
+
+        const typepromises = typeArray.map(pokemon => {
+            return fetch(pokemon.pokemon.url)
+            .then(res => res.json());
+        });
+
+        const typeData = await Promise.all(typepromises).catch(error => {
+            console.error(error)});
+
+        setPokemons(typeData);
+        setFilterSearch(typeData);
+    }
+
 
     
     return ( 
         <>
             <h2>Pokebox</h2>
-            <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon} handleInput = {handleInput}></SelectPoke>
+            <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon} handleInput = {handleInput} fetchFirePokemon={fetchFirePokemon}></SelectPoke>
             <Pokelist pokemons = {filteredSearch}></Pokelist>
             
         </>
