@@ -21,6 +21,10 @@ const StyledButton = styled.button`
     border-radius: 100px;
     margin: 2px;
     cursor: pointer;
+
+    &:hover {
+        background-color: pink
+    }
 `
 
 
