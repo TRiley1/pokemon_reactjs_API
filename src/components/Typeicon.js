@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 
-const Typeicon = ({onClick, children, url}) => {
+const Typeicon = ({onClick, children, url, background}) => {
     
     return ( 
         
-        <StyledButton onClick = {onClick} data-value = {url}>
+        <StyledButton onClick = {onClick} data-value = {url} background = {background}>
             {children}
         </StyledButton>
         
@@ -23,7 +23,7 @@ const StyledButton = styled.button`
     cursor: pointer;
 
     &:hover {
-        background-color: pink
+        background-color: ${({background}) => background}
     }
 `
 
