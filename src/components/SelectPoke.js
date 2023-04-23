@@ -25,6 +25,7 @@ import PsychicIcon from './TypeComponents/PsychicIcon';
 
 const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemon}) => {
 
+    const [isActive, setIsActive] = useState(null)
     const inputRef = useRef(null);
 
     const selectOptions = generations.map((generation, index) => {
@@ -50,20 +51,21 @@ const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemo
     }
 
     const handleClick = function(event) {
-        console.log(event.target.value)
+        console.log(event)
         const value = event.currentTarget.getAttribute('data-value');
-        console.log(value);
+        // console.log(value);
         fetchFirePokemon(value)
         inputRef.current.value = '';
+        setIsActive(value)
     }
 
 
 
     return ( 
         <>
-            <select onChange = {handleChange}>
+            {/* <select onChange = {handleChange}>
                 {selectOptions}
-            </select>
+            </select> */}
 
             <input onChange = {handleInputChange} ref = {inputRef} placeholder = "Search..."></input>
 
@@ -71,24 +73,24 @@ const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemo
             
             <div className = "typeNav">
                 
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/10" background = "red"><FireIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/11" background = "blue"><WaterIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/12" background = "green"><Grass/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/13" background = "yellow"><Thunder/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/9" background = "grey"> <Steel></Steel></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/8" background = "purple"><GhostIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/7" backgrund = "green"><BugIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/6" background = "brown"><RockIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/5" background = "brown"><GroundIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/4" background = "purple"><PoisonIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/3" background = "white"><FlyingIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/2" background = "brown"><FightingIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/1" background = "grey"><Normalcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/14" background = "purple"><PsychicIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/15" background = "blue"><IceIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/16" background = "purple"><DragonIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/17" background = "grey"><DarkIcon/></Typeicon>
-                <Typeicon onClick={handleClick} url = "https://pokeapi.co/api/v2/type/18" background = "pink"><FairyIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/10" background = "red" isActive = {"https://pokeapi.co/api/v2/type/10" === isActive}><FireIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/11" background = "blue" isActive = {"https://pokeapi.co/api/v2/type/11" === isActive}><WaterIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/12" background = "green" isActive = {"https://pokeapi.co/api/v2/type/12" === isActive}><Grass/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/13" background = "yellow" isActive = {"https://pokeapi.co/api/v2/type/13" === isActive}><Thunder/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/9" background = "grey" isActive = {"https://pokeapi.co/api/v2/type/9" === isActive}> <Steel></Steel></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/8" background = "purple" isActive = {"https://pokeapi.co/api/v2/type/8" === isActive}><GhostIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/7" background = "green" isActive = {"https://pokeapi.co/api/v2/type/7" === isActive}><BugIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/6" background = "brown" isActive = {"https://pokeapi.co/api/v2/type/6" === isActive}><RockIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/5" background = "brown" isActive = {"https://pokeapi.co/api/v2/type/5" === isActive}><GroundIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/4" background = "purple" isActive = {"https://pokeapi.co/api/v2/type/4" === isActive}><PoisonIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/3" background = "white" isActive = {"https://pokeapi.co/api/v2/type/3" === isActive}><FlyingIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/2" background = "brown" isActive = {"https://pokeapi.co/api/v2/type/2" === isActive}><FightingIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/1" background = "grey" isActive = {"https://pokeapi.co/api/v2/type/1" === isActive}><Normalcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/14" background = "purple" isActive = {"https://pokeapi.co/api/v2/type/14" === isActive}><PsychicIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/15" background = "blue" isActive = {"https://pokeapi.co/api/v2/type/15" === isActive}><IceIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/16" background = "purple" isActive = {"https://pokeapi.co/api/v2/type/16" === isActive}><DragonIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/17" background = "black" isActive = {"https://pokeapi.co/api/v2/type/17" === isActive}><DarkIcon/></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/18" background = "pink" isActive = {"https://pokeapi.co/api/v2/type/18" === isActive}><FairyIcon/></Typeicon>
             </div>
 
 

@@ -22,6 +22,8 @@ const Pokebox = ({generations}) => {
             return pokemon.name.toLowerCase().includes(searchTerm)
         })
 
+        console.log(searchFilter)
+
         setFilterSearch(searchFilter)
     }, [search])
 
