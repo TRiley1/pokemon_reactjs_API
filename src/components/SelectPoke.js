@@ -51,9 +51,8 @@ const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemo
     }
 
     const handleClick = function(event) {
-        console.log(event)
         const value = event.currentTarget.getAttribute('data-value');
-        // console.log(value);
+        console.log(value);
         fetchFirePokemon(value)
         inputRef.current.value = '';
         setIsActive(value)
@@ -77,7 +76,7 @@ const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemo
                 <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/11" background = "blue" isActive = {"https://pokeapi.co/api/v2/type/11" === isActive}><WaterIcon/></Typeicon>
                 <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/12" background = "green" isActive = {"https://pokeapi.co/api/v2/type/12" === isActive}><Grass/></Typeicon>
                 <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/13" background = "yellow" isActive = {"https://pokeapi.co/api/v2/type/13" === isActive}><Thunder/></Typeicon>
-                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/9" background = "grey" isActive = {"https://pokeapi.co/api/v2/type/9" === isActive}> <Steel></Steel></Typeicon>
+                <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/9" background = "silver" isActive = {"https://pokeapi.co/api/v2/type/9" === isActive}> <Steel></Steel></Typeicon>
                 <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/8" background = "purple" isActive = {"https://pokeapi.co/api/v2/type/8" === isActive}><GhostIcon/></Typeicon>
                 <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/7" background = "green" isActive = {"https://pokeapi.co/api/v2/type/7" === isActive}><BugIcon/></Typeicon>
                 <Typeicon handleClick={handleClick} url = "https://pokeapi.co/api/v2/type/6" background = "brown" isActive = {"https://pokeapi.co/api/v2/type/6" === isActive}><RockIcon/></Typeicon>

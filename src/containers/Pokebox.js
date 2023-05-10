@@ -22,7 +22,6 @@ const Pokebox = ({generations}) => {
             return pokemon.name.toLowerCase().includes(searchTerm)
         })
 
-        console.log(searchFilter)
 
         setFilterSearch(searchFilter)
     }, [search])
@@ -62,16 +61,14 @@ const Pokebox = ({generations}) => {
         const data = await response.json();
         const typeArray = data['pokemon'];
 
-        console.log(typeArray)
 
         const typepromises = typeArray.map(pokemon => {
             return fetch(pokemon.pokemon.url)
             .then(res => res.json());
         });
 
-        const typeData = await Promise.all(typepromises).catch(error => {
-            console.error(error)});
-
+        const typeData = await Promise.all(typepromises)
+        
         setPokemons(typeData);
         setFilterSearch(typeData);
     }
