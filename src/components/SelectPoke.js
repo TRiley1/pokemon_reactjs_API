@@ -23,7 +23,7 @@ import PsychicIcon from './TypeComponents/PsychicIcon';
 
 
 
-const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemon}) => {
+const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemon, randomPoke}) => {
 
     const [isActive, setIsActive] = useState(null)
     const inputRef = useRef(null);
@@ -46,8 +46,9 @@ const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemo
 
     const random = function(){
         const id = Math.floor(Math.random() * 1100)
+        console.log(id)
 
-        return `https://pokeapi.co/api/v2/pokemon/` + id
+        randomPoke(`https://pokeapi.co/api/v2/pokemon/` + id)
     }
 
     const handleClick = function(event) {
@@ -68,7 +69,7 @@ const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemo
 
             <input onChange = {handleInputChange} ref = {inputRef} placeholder = "Search..."></input>
 
-            <button onClick={handleClick} value = {random}>Random Pokemon</button>
+            <button onClick={random}>Random Pokemon</button>
             
             <div className = "typeNav">
                 

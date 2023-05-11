@@ -73,12 +73,18 @@ const Pokebox = ({generations}) => {
         setFilterSearch(typeData);
     }
 
+    async function randomPoke(url) {
+        const response = await fetch(url);
+        const data = await response.json();
+        setFilterSearch([data]);
+    }
+
 
     
     return ( 
         <>
             <h2>Pokebox</h2>
-            <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon} handleInput = {handleInput} fetchFirePokemon={fetchFirePokemon}></SelectPoke>
+            <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon} handleInput = {handleInput} fetchFirePokemon={fetchFirePokemon} randomPoke = {randomPoke}></SelectPoke>
             <Pokelist pokemons = {filteredSearch}></Pokelist>
             
         </>
