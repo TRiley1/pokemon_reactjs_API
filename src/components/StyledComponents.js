@@ -2,9 +2,24 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:(1, 1fr);
   gap: 5rem;
   margin: 20px;
+
+  @media (min-width: 650px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 10px;
+    margin-top: 5px;
+      }
+  @media (min-width: 950px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 10px;
+    margin-top: 5px;
+      }
 `;
 
 const StyledTitle = styled.h1`
