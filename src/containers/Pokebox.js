@@ -1,6 +1,9 @@
 import Pokelist from "../components/Pokelist";
 import SelectPoke from "../components/SelectPoke";
 import React, { useState, useEffect } from 'react';
+import Logo from "../components/logo/Logo";
+import '../components/SelectPoke.css'
+
 
 
 
@@ -83,7 +86,10 @@ const Pokebox = ({generations}) => {
     
     return ( 
         <>
-            <h2>Pokebox</h2>
+            <div className = "headerLogo">
+                <h2 className = "title">Pokebox</h2> 
+                <Logo/>
+            </div>
             <SelectPoke generations = {generations} fetchGen1Pokemon= {fetchGen1Pokemon} handleInput = {handleInput} fetchFirePokemon={fetchFirePokemon} randomPoke = {randomPoke}></SelectPoke>
             <Pokelist pokemons = {filteredSearch}></Pokelist>
             

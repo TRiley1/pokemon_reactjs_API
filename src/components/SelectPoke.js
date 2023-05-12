@@ -45,10 +45,11 @@ const SelectPoke = ({generations, fetchGen1Pokemon, handleInput, fetchFirePokemo
     }
 
     const random = function(){
-        const id = Math.floor(Math.random() * 1100)
+        const id = Math.floor(Math.random() * 1015)
         console.log(id)
 
         randomPoke(`https://pokeapi.co/api/v2/pokemon/` + id)
+        setIsActive(null)
     }
 
     const handleClick = function(event) {

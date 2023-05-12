@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns:(1, 1fr);
-  gap: 5rem;
+  gap: 10rem;
   margin: 20px;
 
   @media (min-width: 650px) {
@@ -13,6 +13,7 @@ const StyledContainer = styled.div`
     margin: 10px;
     margin-top: 5px;
       }
+
   @media (min-width: 950px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -23,11 +24,12 @@ const StyledContainer = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 2.2em;
   font-weight: bold;
   color: #333;
   margin-bottom: 2rem;
   text-transform: capitalize;
+  margin-right: 15px;
 `;
 
 const StyledButton = styled.button`
@@ -49,7 +51,7 @@ const StyledItem = styled.div`
   background-color: #eee;
   padding: 1rem;
   text-align: center;
-  border-radius: 50px
+  border-radius: 100px
 `;
 
 const StyledImage = styled.img`
