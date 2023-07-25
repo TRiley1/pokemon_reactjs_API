@@ -50,9 +50,14 @@ const StyledButton = styled.button`
 const StyledItem = styled.div`
   background-color: #eee;
   padding: 1rem;
+  display: flex;
+  justify-content: center; // Center horizontally
+  align-items: center; // Center vertically
   text-align: center;
-  border-radius: 100px
+  border-radius: 100px;
+  overflow: hidden;
 `;
+
 
 const StyledImage = styled.img`
   width: 250px;

@@ -21,3 +21,9 @@
     margin-right: 10px;
     margin-left: 20px;
 }
+
+.carousel-image-container {
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+  }

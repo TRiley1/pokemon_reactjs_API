@@ -1,34 +1,50 @@
 import React, { useState } from 'react';
-import { StyledTitle, StyledButton,StyledItem, StyledImage } from './StyledComponents';
-import Pokeball from './logo/Pokeball';
-import './SelectPoke.css'
+import './SelectPoke.css';
+import { StyledImage, StyledItem } from './StyledComponents';
 
-const Pokemon = ({pokemon}) => {
+const Pokemon = ({ raremon }) => {
 
-    const [shiny, setShiny] = useState(false)
+    const [imageIndex, setImageIndex] = useState(0);
+    console.log(raremon);
 
-    const handleClick = function(){
-        setShiny(!shiny)
-    }
+    const urls = [
+        raremon?.water?.["1"] ?? "",
+        raremon?.normal?.["1"] ?? "",
+        raremon?.fire?.["1"] ?? "",
+        raremon?.steel?.["1"] ?? "",
+        raremon?.wind?.["1"] ?? "",
+        raremon?.grass?.["1"] ?? "",
+        raremon?.dark?.["1"] ?? "",
+        raremon?.eletric?.["1"] ?? "",
+        raremon?.fairy?.["1"] ?? "",
+        raremon?.ghost?.["1"] ?? "",
+    ];
 
+    const nextButton = () => {
+        setImageIndex((prev) => (prev + 1) % urls.length);
+      };
+      
+      
 
+    const prevButton = () => {
+        setImageIndex((prev) => (prev - 1 + urls.length) % urls.length);
+      };
+      
 
-    return ( 
-    <>
+    return (
         <StyledItem>
-            <div className = "headerCard">
-                <StyledTitle>{shiny? `Shiny ${pokemon.name}`: `${pokemon.name}`}</StyledTitle>
-                <Pokeball/>
-            </div>
-            <div>
-            <StyledImage src = {shiny? pokemon.sprites.other['official-artwork'].front_shiny: pokemon.sprites.other['official-artwork'].front_default } alt = {pokemon.name}/>
-            </div>
-            <div>
-                <StyledButton onClick = {handleClick}>Toggle Shiny</StyledButton> 
-            </div>
+            {/* <h1>Raremon</h1> */}
+            <button className="prev-button" onClick={prevButton}>&lt;</button>
+        
+                        <div className>
+                            <StyledImage src={`/raremon/${urls[imageIndex]}`} />
+                        </div>
+                        
+                         <button className="next-button" onClick={nextButton}>&gt;</button>
+                   
+               
         </StyledItem>
-    </>
     );
-}
- 
+};
+
 export default Pokemon;
