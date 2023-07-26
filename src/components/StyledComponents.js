@@ -10,8 +10,8 @@ const StyledContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin: 10px;
-    margin-top: 5px;
+    ${'' /* margin: 10px; */}
+    ${'' /* margin-top: 5px; */}
       }
 
   @media (min-width: 950px) {
@@ -60,8 +60,8 @@ const StyledItem = styled.div`
 
 
 const StyledImage = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   margin: 20px;
 `
 
