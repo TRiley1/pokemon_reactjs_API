@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SelectPoke.css';
 import { StyledImage, StyledItem } from './StyledComponents';
+import DarkIcon from './TypeComponents/DarkIcon';
 
 const Pokemon = ({ raremon }) => {
 
@@ -35,12 +36,15 @@ const Pokemon = ({ raremon }) => {
         <StyledItem>
             {/* <h1>Raremon</h1> */}
             <button className="prev-button" onClick={prevButton}>&lt;</button>
-        
+                       
                         <div className>
                             <StyledImage src={`/raremon/${urls[imageIndex]}`} />
                         </div>
                         
                          <button className="next-button" onClick={nextButton}>&gt;</button>
+                         <div>
+                         <DarkIcon/>
+                         </div>
                    
                
         </StyledItem>
