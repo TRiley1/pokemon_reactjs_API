@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 
-const Typeicon = ({handleClick, children, url, background, isActive, type}) => {
-
+const Typeicon = ({handleClick, children, url, background, isActive}) => {
     
     return ( 
         <>

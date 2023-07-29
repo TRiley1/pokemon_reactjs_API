@@ -62,7 +62,7 @@ const StyledItem = styled.div`
 const StyledImage = styled.img`
   width: 350px;
   height: 350px;
-  margin: 20px;
+  margin: 10px;
 `
 
  

@@ -1,54 +1,98 @@
 import React, { useState } from 'react';
 import './SelectPoke.css';
 import { StyledImage, StyledItem } from './StyledComponents';
-import DarkIcon from './TypeComponents/DarkIcon';
+import Typeicon from './Typeicon';
 
 const Pokemon = ({ raremon }) => {
+  const [imageIndex, setImageIndex] = useState(0);
 
-    const [imageIndex, setImageIndex] = useState(0);
-    console.log(raremon);
+  const data = Object.entries(raremon);
 
-    const urls = [
-        raremon?.water?.["1"] ?? "",
-        raremon?.normal?.["1"] ?? "",
-        raremon?.fire?.["1"] ?? "",
-        raremon?.steel?.["1"] ?? "",
-        raremon?.wind?.["1"] ?? "",
-        raremon?.grass?.["1"] ?? "",
-        raremon?.dark?.["1"] ?? "",
-        raremon?.eletric?.["1"] ?? "",
-        raremon?.fairy?.["1"] ?? "",
-        raremon?.ghost?.["1"] ?? "",
-    ];
+  const nextButton = () => {
+    setImageIndex((prev) => (prev + 1) % data.length);
+  };
 
-    const nextButton = () => {
-        setImageIndex((prev) => (prev + 1) % urls.length);
-      };
-      
-      
+  const prevButton = () => {
+    setImageIndex((prev) => (prev - 1 + data.length) % data.length);
+  };
 
-    const prevButton = () => {
-        setImageIndex((prev) => (prev - 1 + urls.length) % urls.length);
-      };
-      
+  const handleClick = (event) => {
+    const index = event.currentTarget.getAttribute('data-value');
+    setImageIndex(index);
+  };
 
-    return (
-        <StyledItem>
-            {/* <h1>Raremon</h1> */}
-            <button className="prev-button" onClick={prevButton}>&lt;</button>
-                       
-                        <div className>
-                            <StyledImage src={`/raremon/${urls[imageIndex]}`} />
+  const topRowIcons = () => {
+    const icons = [];
+    for (let i = 0; i < 5; i++) {
+      icons.push(
+        <Typeicon
+          key={i}
+          handleClick={handleClick}
+          url={i}
+          isActive={imageIndex === i}
+          background={data[i][1].colour}
+        >
+          {data[i][1].component}
+        </Typeicon>
+      );
+    }
+    return icons;
+  };
+
+  const bottomRowIcons = () => {
+    const icons = [];
+    for (let i = 5; i < data.length; i++) {
+      icons.push(
+        <Typeicon
+          key={i}
+          handleClick={handleClick}
+          url={i}
+          isActive={imageIndex === i}
+          background={data[i][1].colour}
+        >
+          {data[i][1].component}
+        </Typeicon>
+      );
+    }
+    return icons;
+  };
+
+  
+
+  return (
+    <>
+      <StyledItem>
+        {/* <h1>Raremon</h1> */}
+        <div>
+            <div className = 'icons'>
+                {topRowIcons()}
+            </div>
+            <div className = "container">
+                <button className="carubutton" onClick={prevButton}>&lt;</button>
+                <div>
+                    {data[imageIndex][1].discovered ? (
+                        <div>
+                        <StyledImage src={`/raremon/${data[imageIndex][1].image}`} />
+                        <h2>Raremon</h2>
                         </div>
-                        
-                         <button className="next-button" onClick={nextButton}>&gt;</button>
-                         <div>
-                         <DarkIcon/>
-                         </div>
-                   
-               
-        </StyledItem>
-    );
+                    ) : (
+                        <div>
+                        <StyledImage src={`/raremon/${data[imageIndex][1].darkImage}`} />
+                        <h2>NOT DISCOVERED</h2>
+                        </div>
+                    )}
+                    </div>
+
+                <button className="carubutton" onClick={nextButton}>&gt;</button>
+            </div>
+            <div className = 'icons'>
+                {bottomRowIcons()}
+            </div>
+        </div>
+      </StyledItem>
+    </>
+  );
 };
 
 export default Pokemon;
+
