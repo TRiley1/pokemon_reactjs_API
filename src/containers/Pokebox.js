@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Logo from "../components/logo/Logo";
 import '../components/SelectPoke.css';
 import getRaremon from "../raremon/raremon";
+import SplashScreen from "../components/SplashScreen";
+import '../components/SelectPoke.css'
 
 
 
@@ -12,17 +14,21 @@ const Pokebox = () => {
 
     const [raremons, setRaremons] = useState(getRaremon());
 
+
       if (raremons == null || raremons.length === 0) {
         return <p>Loading...</p>;
       }
    
     return ( 
         <>
-            <div className = "headerLogo">
+            <div class = 'home-container'>
+            {/* <div className = "headerLogo">
                 <h2 className = "title">Rarelands</h2> 
                 <Logo/>
+            </div> */}
+                <SplashScreen/>
+            {/* <Pokelist raremons = {raremons}></Pokelist> */}
             </div>
-            <Pokelist raremons = {raremons}></Pokelist>
             
         </>
      );

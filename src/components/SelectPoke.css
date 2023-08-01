@@ -1,4 +1,4 @@
-.typeNav {
+/* .typeNav {
     margin : 20px; 
     display : flex; 
     flex-direction: row;
@@ -41,5 +41,127 @@
 .carubutton {
     height : 50px;
     
+} */
+
+.home-container{
+    display: flex;
+
 }
 
+.letters-container {
+    height: 330px;
+    width: 1000px;
+    display: flex;
+  }
+  
+  .letter {
+    width: 110px; 
+    height: 200px;
+    display: inline-block;
+    background-image: url('/Users/thomas/Desktop/codeclan_work/week_07/day_5/pokemon/public/raremon/MIsc/rareTitle.png');
+    background-repeat: no-repeat;
+    background-size: 1000px 200px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    transition: filter 1s;
+  }
+  
+  .letter-r {
+    background-position: 0 0;
+  }
+  
+  .letter-a {
+    background-position: -110px 0; 
+  }
+  
+  .letter-r2 {
+    background-position: -220px 0; 
+  }
+  
+  .letter-e {
+    background-position: -330px 0; 
+  }
+  
+  .letter-l {
+    background-position: -440px 0; 
+    width: 100px
+  }
+  
+  .letter-a2 {
+    background-position: -540px 0; 
+  }
+  
+  .letter-n {
+    background-position: -660px 0; 
+  }
+  
+  .letter-d {
+    background-position: -770px 0; 
+  }
+  
+  .letter-s {
+    background-position: -880px 0; 
+  }
+  
+  .letter:hover {
+    filter: grayscale(0%);
+  }
+  
+  @media (max-width: 600px) {
+
+    .letters-container {
+        height: 180px
+    }
+
+    .letter {
+        background-size: 500px , 150px;
+        width: 55.5px;
+        filter: grayscale(5%)
+    }
+
+    
+  
+    /* Hide unnecessary letters on mobile */
+    .letter-l,
+    .letter-a2,
+    .letter-n,
+    .letter-d,
+    .letter-s {
+      display: none;
+    }
+
+    .letter-r {
+        background-position: 0 0;
+      }
+      
+      .letter-a {
+        background-position: -55px 0; 
+      }
+      
+      .letter-r2 {
+        background-position: -110px 0; 
+      }
+      
+      .letter-e {
+        background-position: -165px 0; 
+      }
+
+    
+
+  
+    /* Adjust background positions for "rare" on mobile */
+
+  }
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
