@@ -1,3 +1,10 @@
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+  } from "react-router-dom";
+
 import Pokelist from "../components/Pokelist";
 import SelectPoke from "../components/SelectPoke";
 import React, { useState, useEffect } from 'react';
@@ -9,8 +16,7 @@ import '../components/SelectPoke.css'
 import TwitterIcon from "../components/TypeComponents/TwitterIcon";
 import DiscordIcon from "../components/TypeComponents/DiscordIcon";
 import FantasyMap from "../components/TypeComponents/FantasyMap";
-import FantasyMapDetail from "../components/TypeComponents/FantasyMapDetail";
-import FantasyMapCombine from "../components/FantasyMapCombine";
+
 
 
 
@@ -24,7 +30,8 @@ const Pokebox = () => {
         return <p>Loading...</p>;
       }
 
-        return (
+      return (
+        <Router>
           <div className="home-screen">
             <header>
               <div className="logo">
@@ -32,34 +39,31 @@ const Pokebox = () => {
               </div>
               <nav>
                 <ul className="nav-links">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Collection</a></li>
-                  <li><a href="#">Training</a></li>
-                  <li><a href="#">Store</a></li>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="/collection">Collection</Link></li>
+                  <li><Link to="/training">Training</Link></li>
+                  <li><Link to="/store">Store</Link></li>
                 </ul>
               </nav>
               <div className="social-icons">
-                <div> <TwitterIcon/></div>
-                <div><DiscordIcon/></div>
+                <div><TwitterIcon /></div>
+                <div><DiscordIcon /></div>
               </div>
             </header>
-      
+    
             <main className="content">
               <div className="central-component">
-                {/* <SplashScreen/>
-                <h3>Coming soon...</h3> */}
-                <Pokelist raremons={raremons}/>
+                <Routes>
+                  <Route path="/" element={<SplashScreen />} />
+                  <Route path="/collection" element={<Pokelist raremons={raremons} />} />
+                </Routes>
               </div>
-              {/* <div className="map-container">
-                <div className="map-overlay">
-                    <FantasyMapDetail />
-                </div>
-                <FantasyMap />
-              </div> */}
             </main>
           </div>
-        );
-}
+        </Router>
+      );
+    }
+
  
 export default Pokebox;

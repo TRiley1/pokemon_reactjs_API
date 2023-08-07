@@ -3,8 +3,8 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns:(1, 1fr);
-  gap: 10rem;
-  margin: 20px;
+  gap: 1rem;
+  margin: 10px;
 
   @media (min-width: 650px) {
     display: grid;
@@ -17,7 +17,7 @@ const StyledContainer = styled.div`
   @media (min-width: 950px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 2.5rem;
     margin: 10px;
     margin-top: 5px;
       }
@@ -51,8 +51,8 @@ const StyledItem = styled.div`
   background-color: #eee;
   padding: 1rem;
   display: flex;
-  justify-content: center; // Center horizontally
-  align-items: center; // Center vertically
+  justify-content: center; 
+  align-items: center; 
   text-align: center;
   border-radius: 100px;
   overflow: hidden;
