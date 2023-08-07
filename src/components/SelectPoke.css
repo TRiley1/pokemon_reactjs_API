@@ -4,12 +4,12 @@
     flex-direction: row;
 }
 
-.headerLogo {
+/* /* .headerLogo {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
-}
+} */
 .headerCard {
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@
 .carubutton {
     height : 50px;
     
-} */
+} */ */
 
 .home-container{
     display: flex;
@@ -49,18 +49,18 @@
 }
 
 .letters-container {
-    height: 330px;
+    height: 300px;
     width: 1000px;
     display: flex;
   }
   
   .letter {
-    width: 110px; 
-    height: 200px;
+    width: 111px; 
+    height: 300px;
     display: inline-block;
     background-image: url('/Users/thomas/Desktop/codeclan_work/week_07/day_5/pokemon/public/raremon/MIsc/rareTitle.png');
     background-repeat: no-repeat;
-    background-size: 1000px 200px;
+    background-size: 1000px 300px;
     filter: grayscale(100%);
     cursor: pointer;
     transition: filter 1s;
@@ -68,39 +68,40 @@
   
   .letter-r {
     background-position: 0 0;
+    width: 108px;
   }
   
   .letter-a {
-    background-position: -110px 0; 
+    background-position: -107px 0; 
   }
   
   .letter-r2 {
-    background-position: -220px 0; 
+    background-position: -222px 0; 
   }
   
   .letter-e {
-    background-position: -330px 0; 
+    background-position: -333px 0; 
   }
   
   .letter-l {
-    background-position: -440px 0; 
-    width: 100px
+    background-position: -444px 0; 
+    width: 100px;
   }
   
   .letter-a2 {
-    background-position: -540px 0; 
+    background-position: -545px 0; 
   }
   
   .letter-n {
-    background-position: -660px 0; 
+    background-position: -666px 0; 
   }
   
   .letter-d {
-    background-position: -770px 0; 
+    background-position: -777px 0; 
   }
   
   .letter-s {
-    background-position: -880px 0; 
+    background-position: -888px 0; 
   }
   
   .letter:hover {
@@ -146,12 +147,107 @@
         background-position: -165px 0; 
       }
 
-    
-
-  
-    /* Adjust background positions for "rare" on mobile */
 
   }
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .home-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255,249,240);
+    padding: 10px;
+  }
+  
+  .logo {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .logo img {
+    max-height: 75px;
+  }
+  
+  nav {
+    flex: 3;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .nav-links li {
+    margin: 0 10px;
+    background-color: rgb(241,234,221);
+    padding: 5px 10px 5px;
+    border-radius: 4px;
+  }
+
+  .nav-links li:hover {
+    background-color: white;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(139,109,75);
+  }
+  
+  .social-icons {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icons div {
+    background-color: rgb(241,234,221);
+    margin: 5px;
+    padding: 2px 7px 2px;
+    border-radius: 4px;
+  }
+
+  .social-icons div:hover {
+    background-color: white;
+  }
+  
+  /* Add styles for social media icons as needed */
+  
+  .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,249,240);
+  }
+  
+  .central-component {
+    /* padding: 20px; */
+    margin-bottom: 150px;
+  }
+
+  .map-container {
+    position: relative;
+  }
+  
+  .map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  
   
   
   
