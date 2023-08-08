@@ -18,7 +18,7 @@ const getRaremon = () => {
             "fire" : {
                 "image" : "wyvie/1stStage/fireType.png",
                 "darkImage" : "wyvie/1stStage/fireTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <FireIcon/>,
                 'colour': "red",
             },
@@ -39,7 +39,7 @@ const getRaremon = () => {
             "grass" : {
                 "image" : "wyvie/1stStage/grassType.png",
                 "darkImage" : "wyvie/1stStage/grassTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <Grass/>,
                 'colour': "green",
             },
@@ -90,7 +90,7 @@ const getRaremon = () => {
             "fire" : {
                 "image" : "wyvie/2ndStage/fireType.png",
                 "darkImage" : "wyvie/2ndStage/fireTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <FireIcon/>,
                 'colour': "red",
             },
@@ -111,7 +111,7 @@ const getRaremon = () => {
             "grass" : {
                 "image" : "wyvie/2ndStage/grassType.png",
                 "darkImage" : "wyvie/2ndStage/grassTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <Grass/>,
                 'colour': "green",
             },
@@ -162,7 +162,7 @@ const getRaremon = () => {
             "fire" : {
                 "image" : "wyvie/3rdStage/fireType.png",
                 "darkImage" : "wyvie/3rdStage/fireTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <FireIcon/>,
                 'colour': "red",
             },
@@ -183,7 +183,7 @@ const getRaremon = () => {
             "grass" : {
                 "image" : "wyvie/3rdStage/grassType.png",
                 "darkImage" : "wyvie/3rdStage/grassTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <Grass/>,
                 'colour': "green",
             },
@@ -234,7 +234,7 @@ const getRaremon = () => {
             "fire" : {
                 "image" : "lupo/1stStage/fireType.png",
                 "darkImage" : "lupo/1stStage/fireTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <FireIcon/>,
                 'colour': "red",
             },
@@ -255,7 +255,7 @@ const getRaremon = () => {
             "grass" : {
                 "image" : "lupo/1stStage/grassType.png",
                 "darkImage" : "lupo/1stStage/grassTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <Grass/>,
                 'colour': "green",
             },
@@ -306,7 +306,7 @@ const getRaremon = () => {
             "fire" : {
                 "image" : "lupo/2ndStage/fireType.png",
                 "darkImage" : "lupo/2ndStage/fireTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <FireIcon/>,
                 'colour': "red",
             },
@@ -327,7 +327,7 @@ const getRaremon = () => {
             "grass" : {
                 "image" : "lupo/2ndStage/grassType.png",
                 "darkImage" : "lupo/2ndStage/grassTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <Grass/>,
                 'colour': "green",
             },
@@ -378,7 +378,7 @@ const getRaremon = () => {
             "fire" : {
                 "image" : "lupo/3rdStage/fireType.png",
                 "darkImage" : "lupo/3rdStage/fireTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <FireIcon/>,
                 'colour': "red",
             },
@@ -399,7 +399,7 @@ const getRaremon = () => {
             "grass" : {
                 "image" : "lupo/3rdStage/grassType.png",
                 "darkImage" : "lupo/3rdStage/grassTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <Grass/>,
                 'colour': "green",
             },
@@ -450,7 +450,7 @@ const getRaremon = () => {
             "fire" : {
                 "image" : "squark/1stStage/fireType.png",
                 "darkImage" : "squark/1stStage/fireTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <FireIcon/>,
                 'colour': "red",
             },
@@ -471,7 +471,7 @@ const getRaremon = () => {
             "grass" : {
                 "image" : "squark/1stStage/grassType.png",
                 "darkImage" : "squark/1stStage/grassTypeDark.png",
-                "discovered" : false,
+                "discovered" : true,
                 'component': <Grass/>,
                 'colour': "green",
             },

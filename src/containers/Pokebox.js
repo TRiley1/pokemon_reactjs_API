@@ -6,16 +6,15 @@ import {
   } from "react-router-dom";
 
 import Pokelist from "../components/Pokelist";
-import SelectPoke from "../components/SelectPoke";
-import React, { useState, useEffect } from 'react';
-import Logo from "../components/logo/Logo";
+import {useState} from 'react';
 import '../components/SelectPoke.css';
 import getRaremon from "../raremon/raremon";
 import SplashScreen from "../components/SplashScreen";
 import '../components/SelectPoke.css'
 import TwitterIcon from "../components/TypeComponents/TwitterIcon";
 import DiscordIcon from "../components/TypeComponents/DiscordIcon";
-import FantasyMap from "../components/TypeComponents/FantasyMap";
+import FantasyMapCombine from "../components/FantasyMapCombine";
+import Training from "../components/Training";
 
 
 
@@ -56,7 +55,9 @@ const Pokebox = () => {
               <div className="central-component">
                 <Routes>
                   <Route path="/" element={<SplashScreen />} />
+                  <Route path="/about" element={<FantasyMapCombine/>}/>
                   <Route path="/collection" element={<Pokelist raremons={raremons} />} />
+                  <Route path="/training" element={<Training />} />
                 </Routes>
               </div>
             </main>

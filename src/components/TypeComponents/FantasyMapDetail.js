@@ -1,6 +1,6 @@
 const FantasyMapDetail = () => {
     return ( 
-        <svg width="1500" height="1200" viewBox="0.00 0.00 3261.00 2806.00" xmlns="http://www.w3.org/2000/svg">
+        <svg width="800" height="600" viewBox="0.00 0.00 3261.00 2806.00" xmlns="http://www.w3.org/2000/svg">
         <g stroke-linecap="round" transform="translate(-1083.00, -690.00)" id="Layer_3">
         <path d="M2268.01,1792.38 C2268.01,1792.38 2316.20,1795.97 2316.20,1795.97" fill="none" stroke="rgb(22, 0, 0)" stroke-width="7.00" stroke-opacity="1.00" stroke-linejoin="round"/>
         <path d="M2354.23,1787.95 C2354.23,1787.95 2406.20,1763.61 2406.20,1763.61" fill="none" stroke="rgb(22, 0, 0)" stroke-width="7.00" stroke-opacity="1.00" stroke-linejoin="round"/>
